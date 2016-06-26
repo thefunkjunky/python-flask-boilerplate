@@ -1,5 +1,5 @@
 import os
-from mainapp import app
+from mainapp.main import app
 
 def run():
     port = int(os.environ.get('PORT', 8080))

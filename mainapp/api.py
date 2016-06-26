@@ -7,7 +7,7 @@ from jsonschema import validate, ValidationError
 
 from . import models
 from . import decorators
-from mainapp.main import app
+from .main import app
 from .database import session
 
 
