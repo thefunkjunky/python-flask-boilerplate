@@ -1,3 +1,5 @@
+import os
+from base64 import b64encode
 import json
 import getpass
 
@@ -9,7 +11,9 @@ def main():
 	# I was taught to use this as an environment variable, but I don't
 	# like that for some reason.  So I'm just doing it here.  This is 
 	# probably more insecure though, might want to look into that.
-	secret_env_key = ""
+	random_bytes = urandom(64)
+	token = b64encode(random_bytes).decode('utf-8')
+	secret_env_key = token
 
 	print("Configuring project variables configuration file.")
 	db_name = input('Please enter SQL database name.> ')
